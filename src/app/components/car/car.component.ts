@@ -7,6 +7,7 @@ import { Car } from 'src/app/models/car';
   styleUrls: ['./car.component.css'],
 })
 export class CarComponent implements OnInit {
+  
   cars: Car[] = [];
 
   constructor() {}
