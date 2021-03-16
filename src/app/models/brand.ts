@@ -1,4 +1,4 @@
-export interface Color{
+export interface Brand{
     BrandId:number;
     BrandName:string;
 }
