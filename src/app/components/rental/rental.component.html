@@ -1,21 +1,34 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <table *ngIf="dataLoaded!=false" class="table">
-    <thead>
-      <tr>
-        <td>Id</td>
-        <td>carId</td>
-        <td>customerId</td>
-        <td>rentDate</td>
-        <td>returnDate</td>
-      </tr>
-    </thead>
-    <tr *ngFor="let rental of rentals">
-      <td>{{ rental.Id }}</td>
-      <td>{{ rental.carId }}</td>
-      <td>{{ rental.customerId }}</td>
-      <td>{{ rental.rentDate }}</td>
-      <td>{{ rental.returnDate }}</td>
+<div *ngIf="dataLoaded == false" class="spinner-border text-primary" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<table *ngIf="dataLoaded != false" class="table">
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>carId</td>
+      <td>carName</td>
+      <td>BrandName</td>
+      <td>ColorName</td>
+      <td>CompanyName</td>
+      <td>CustomerName</td>
+      <td>modelYear</td>
+      <td>dailyPrice</td>
+      <td>rentDate</td>
+      <td>returnDate</td>
     </tr>
-  </table>
+  </thead>
+  <tr *ngFor="let rentalDetail of rentalDetails">
+    <td>{{ rentalDetail.Id }}</td>
+    <td>{{ rentalDetail.carId }}</td>
+    <td>{{ rentalDetail.carName }}</td>
+    <td>{{ rentalDetail.brandName }}</td>
+    <td>{{ rentalDetail.colorName }}</td>
+    <td>{{ rentalDetail.companyName }}</td>
+    <td>{{ rentalDetail.customerName }}</td>
+    <td>{{ rentalDetail.modelYear }}</td>
+    <td>{{ rentalDetail.dailyPrice }}</td>
+    <td>{{ rentalDetail.rentDate }}</td>
+    <td *ngIf="rentalDetail.returnDate == null">Teslim Edilmedi</td>
+    <td *ngIf="rentalDetail.returnDate != null">{{ rentalDetail.returnDate }}</td>
+  </tr>
+</table>

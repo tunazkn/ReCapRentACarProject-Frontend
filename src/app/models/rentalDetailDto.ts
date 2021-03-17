@@ -1,15 +1,18 @@
-export interface Car{
+export interface RentalDetailDto{
     Id:number;
     carId:number;
-    carNam:string;
-    BrandName:string;
-    ColorName:string;
-    CompanyName:string;
-    CustomerFirstName:string;
-    CustomerLastName:string;
-    Email:string;
-    RentDate:Date;
-    ReturnDate:Date;
+    carName:string;
+    brandName:string;
+    brandId:number;
+    colorName:string;
+    companyName:string;
+    customerId:number;
+    customerName:string;
+    email:string;
+    RentDate:string;
+    rentDate:string;
+    ReturnDate:string;
+    returnDate:string;
     modelYear:number;
     dailyPrice:number;
 }

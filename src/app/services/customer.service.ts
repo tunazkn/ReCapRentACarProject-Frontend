@@ -7,11 +7,15 @@ import { CustomerResponseModel } from '../models/customerResponseModel';
   providedIn: 'root'
 })
 export class CustomerService {
-  apiUrl = 'https://localhost:44334/api/customers/getall';
+  apiUrlGetAll = 'https://localhost:44334/api/customers/getall';
+  apiUrlGetDetails = 'https://localhost:44334/api/customers/getdetails';
 
   constructor(private httpClient: HttpClient) { }
 
   getCustomers():Observable<CustomerResponseModel> {
-    return this.httpClient.get<CustomerResponseModel>(this.apiUrl);
+    return this.httpClient.get<CustomerResponseModel>(this.apiUrlGetAll);
+  }
+  getCustomerDetails():Observable<CustomerResponseModel> {
+    return this.httpClient.get<CustomerResponseModel>(this.apiUrlGetDetails);
   }
 }
