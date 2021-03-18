@@ -4,17 +4,19 @@
 <table *ngIf="dataLoaded!=false" class="table">
   <thead>
     <tr>
-      <td>carId</td>
-      <td>BrandName</td>
-      <td>ColorName</td>
-      <td>modelYear</td>
-      <td>dailyPrice</td>
-      <td>description</td>
+      <td>Car Id</td>
+      <td>Car Name</td>
+      <td>Brand Name</td>
+      <td>Color Name</td>
+      <td>Model Year</td>
+      <td>Daily Price</td>
+      <td>Description</td>
     </tr>
   </thead>
   <tr *ngFor="let carDetail  of carDetails">
     <td>{{ carDetail.carId }}</td>
     <td>{{ carDetail.brandName }}</td>
+    <td>{{ carDetail.carName }}</td>
     <td>{{ carDetail.colorName }}</td>
     <td>{{ carDetail.modelYear }}</td>
     <td>{{ carDetail.dailyPrice }}</td>

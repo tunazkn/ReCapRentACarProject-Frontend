@@ -9,7 +9,7 @@ import { RentalService } from 'src/app/services/rental.service';
   styleUrls: ['./rental.component.css']
 })
 export class RentalComponent implements OnInit {
-  rentalDetails: Rental[] = [];
+  rentalDetails: RentalDetailDto[] = [];
   dataLoaded=false;
   dateOfReturn = "";
   constructor(private rentalService: RentalService) { }
