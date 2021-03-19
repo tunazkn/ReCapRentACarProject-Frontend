@@ -10,8 +10,9 @@ import { RentalService } from 'src/app/services/rental.service';
 })
 export class RentalComponent implements OnInit {
   rentalDetails: RentalDetailDto[] = [];
+  currentRental:RentalDetailDto;
   dataLoaded=false;
-  dateOfReturn = "";
+  
   constructor(private rentalService: RentalService) { }
 
   ngOnInit(): void {
@@ -23,6 +24,8 @@ export class RentalComponent implements OnInit {
       this.rentalDetails = response.data;
       this.dataLoaded =true;
     })
-    
+  }
+  setCurruntRentalDetail(rentalDetailDto: RentalDetailDto) {
+    this.currentRental=rentalDetailDto;
   }
 }

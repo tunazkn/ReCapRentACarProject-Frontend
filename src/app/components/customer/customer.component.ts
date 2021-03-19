@@ -10,6 +10,7 @@ import { CustomerService } from 'src/app/services/customer.service';
 })
 export class CustomerComponent implements OnInit {
   customerDetails: CustomerDetailDto[] = [];
+  currentCustomer:Customer;
   dataLoaded=false;
 
   constructor(private customerService: CustomerService) { }
@@ -23,6 +24,9 @@ export class CustomerComponent implements OnInit {
       this.customerDetails = response.data;
       this.dataLoaded =true;
     })
-    
+  }
+  
+  setCurruntCustomer(customer: Customer) {
+    this.currentCustomer=customer;
   }
 }
