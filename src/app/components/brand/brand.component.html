@@ -1,12 +1,28 @@
-<div *ngIf="dataLoaded == false" class="spinner-border text-primary" role="status">
+<select
+  (change)="setCurrentBrand()"
+  [(ngModel)]="currentBrand"
+  class="form-select mb-1"
+  aria-label="Default select example">
+  <option [selected]="allBrandSelected()" [ngValue]="allBrand">
+    Tüm Araçları Getir
+  </option>
+  <option *ngFor="let brand of brands" [ngValue]="brand">
+    {{ brand.brandName }}
+  </option>
+</select>
+
+<!---<div *ngIf="dataLoaded == false" class="spinner-border text-primary" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
 <ul *ngIf="dataLoaded != false">
   <button routerLink="/cars" (click)="CleanCurrentBrand()" type="button" 
   class="btn btn-info mb-2"> Tüm Arabalar </button>
+  <hr>
+  <h3>Brands</h3>
 
   <li (click)="setCurrentBrand(brand)" routerLink="/cars/brand/{{ brand.brandId }}"
     *ngFor="let brand of brands" [class]="getCurrentBrandClass(brand)">{{ brand.brandName }}</li>
 </ul>
 
 <h5 *ngIf="currentBrand">{{ currentBrand.brandName }} seçtiniz</h5>
+-->

@@ -9,24 +9,41 @@ import { CustomerService } from 'src/app/services/customer.service';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
-  customerDetails: CustomerDetailDto[] = [];
-  currentCustomer:Customer;
-  dataLoaded=false;
-
-  constructor(private customerService: CustomerService) { }
+  customers:Customer[]=[];
+  dataLoaded = false;
+  constructor(private customerService:CustomerService) { }
 
   ngOnInit(): void {
-    this.getCustomerDetails();
+    this.getCustomers();
   }
-
-  getCustomerDetails() {
-    this.customerService.getCustomerDetails().subscribe((response) => {
-      this.customerDetails = response.data;
-      this.dataLoaded =true;
+  getCustomers(){
+    this.customerService.getCustomers().subscribe((response)=>{
+      this.customers = response.data;
+      this.dataLoaded = true;
     })
   }
-  
-  setCurruntCustomer(customer: Customer) {
-    this.currentCustomer=customer;
-  }
 }
+//
+  //
+  //customerDetails: CustomerDetailDto[] = [];
+  //currentCustomer:Customer;
+  //dataLoaded=false;
+//
+ // constructor(private customerService: CustomerService) { }
+////
+// / ngOnInit(): void {
+//    this.getCustomerDetails();
+//  }
+//
+ // getCustomerDetails() {
+  //  this.customerService.getCustomerDetails().subscribe((response) => {
+   //   this.customerDetails = response.data;
+    //  this.dataLoaded =true;
+    //})
+ // }
+ // 
+ // setCurruntCustomer(customer: Customer) {
+  //  this.currentCustomer=customer;
+//  /}/
+//}
+//

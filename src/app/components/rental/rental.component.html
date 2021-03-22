@@ -1,6 +1,28 @@
 <div *ngIf="dataLoaded == false" class="spinner-border text-primary" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
+
+<table *ngIf="dataLoaded==true" class="table table-bordered">
+  <thead>
+      <th>Rental Id</th>
+      <th>Car</th>
+      <th>First Name & Last Name</th>
+      <th>Rent Date</th>
+      <th>Return Date</th>
+  </thead>
+  <tbody>
+      <tr *ngFor="let rental of rentals">
+          <td>{{rental.id}}</td>
+          <td>{{rental.brandName}} {{rental.carName}} {{rental.modelYear}} {{rental.colorName}} </td>
+          <td>{{rental.customerName}}</td>
+          <td>{{rental.rentDate}}</td>
+          <td *ngIf="rental.returnDate == null">Teslim Edilmedi</td>
+          <td *ngIf="rental.returnDate != null">{{rental.returnDate}}</td>
+      </tr>
+  </tbody>
+</table>
+
+<!---
 <table *ngIf="dataLoaded != false" class="table">
   <thead>
     <tr>
@@ -32,3 +54,4 @@
     <td *ngIf="rentalDetail.returnDate != null">{{ rentalDetail.returnDate }}</td>
   </tr>
 </table>
+-->

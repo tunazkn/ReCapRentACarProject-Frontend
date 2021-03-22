@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Brand } from 'src/app/models/brand';
 import { BrandService } from 'src/app/services/brand.service';
+import {Filters} from '../../models/filters';
 
 @Component({
   selector: 'app-brand',
@@ -8,9 +9,13 @@ import { BrandService } from 'src/app/services/brand.service';
   styleUrls: ['./brand.component.css'],
 })
 export class BrandComponent implements OnInit {
+
   brands: Brand[] = [];
-  currentBrand: Brand; //tsconfig.json'da "strictPropertyInitialization": false yaptık hata vermiyor artık
   dataLoaded = false;
+  error = '';
+  currentBrand: Brand;//tsconfig.json'da "strictPropertyInitialization": false yaptık hata vermiyor artık
+  allBrand?: Brand;
+  Filters = {};
 
   constructor(private brandService: BrandService) {}
 
@@ -18,17 +23,34 @@ export class BrandComponent implements OnInit {
     this.getBrands();
   }
 
+
   getBrands() {
+    this.brandService.getBrands().subscribe(response => {
+      this.brands = response.data;
+      this.dataLoaded = true;
+    }, error => {
+      this.error = error.name;
+    });
+  }
+  setCurrentBrand() {
+    this.currentBrand !== undefined
+      ? (Filters.brandId = this.currentBrand.brandId.toString())
+      : (Filters.brandId = '');
+  }
+  allBrandSelected() {
+    return this.currentBrand === undefined ? true : false;
+  }
+  getBrands2() {
     this.brandService.getBrands().subscribe((response) => {
       this.brands = response.data;
       this.dataLoaded = true;
     });
   }
 
-  setCurrentBrand(brand: Brand) {
+  setCurrentBrand2(brand: Brand) {
     this.currentBrand = brand;
   }
-  getCurrentBrandClass(brand: Brand) {
+  getCurrentBrandClass2(brand: Brand) {
     if (brand == this.currentBrand) {
       return "list-group-item active";
     }

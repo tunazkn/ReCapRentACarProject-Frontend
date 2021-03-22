@@ -1,12 +1,26 @@
-<div *ngIf="dataLoaded == false" class="spinner-border text-primary" role="status">
+<select
+  [(ngModel)]="currentColor"
+  (change)="setCurrentColor()"
+  class="form-select mb-1"
+  aria-label="Default select example"
+>
+  <option [selected]="allColorsSelected()" [ngValue]="allColor">
+    Tüm Renkleri Getir
+  </option>
+  <option *ngFor="let color of colors" [ngValue]="color">
+    {{ color.colorName }}
+  </option>
+</select>
+
+<!--<div *ngIf="dataLoaded == false" class="spinner-border text-primary" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
 <ul *ngIf="dataLoaded != false">
-  <button routerLink="/cars" (click)="CleanCurrentBrand()" type="button" 
-  class="btn btn-info mb-2"> Tüm Arabalar </button>
-
+  <hr>
+  <h3>Colors</h3>
   <li (click)="setCurrentColor(color)" routerLink="/cars/color/{{ color.colorId }}" 
     *ngFor="let color of colors" [class]="getCurrentColorClass(color)">{{ color.colorName }}</li>
 </ul>
 
 <h5 *ngIf="currentColor">{{ currentColor.colorName }} seçtiniz</h5>
+-->

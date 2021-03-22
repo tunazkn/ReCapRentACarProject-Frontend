@@ -1,6 +1,22 @@
 <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+<table *ngIf="dataLoaded==true" class="table table-bordered">
+  <thead>
+      <th>User Name</th>
+      <th>Email</th>
+      <th>Company Name</th>
+  </thead>
+  <tbody>
+      <tr *ngFor="let customer of customers">
+          <td>{{customer.firstName}} {{customer.lastName}}</td>
+          <td>{{customer.email}}</td>
+          <td>{{customer.companyName}}</td>
+      </tr>
+  </tbody>
+</table>
+<!--
   <table *ngIf="dataLoaded!=false" class="table">
     <thead>
       <tr>
@@ -19,3 +35,4 @@
       <td>{{ customerDetail.companyName }}</td>
     </tr>
   </table>
+-->
