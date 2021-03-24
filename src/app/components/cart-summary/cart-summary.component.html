@@ -6,7 +6,7 @@
         Sepetiniz
       </div>
       <div class="card-body" *ngFor="let cartItem of cartItems">
-        <!-- PRODUCT -->
+        
         <div class="row">
           <div class="col-12 col-sm-12 col-md-2 text-center">
             <img class="img-responsive" src="{{baseUrl}}/{{cartItem.car.imagePath}}" alt="prewiew" width="120" height="80">
@@ -34,7 +34,7 @@
           </div>
         </div>
         <hr>
-        <!-- END PRODUCT -->
+        
         <div style="background-color: transparent">
           <div class="coupon col-md-5 col-sm-5 no-padding-left pull-left">
             <div class="row">
@@ -68,21 +68,3 @@
       </div>
     </div>
   </div>
-
-  
-  <!---
-
-
-<li *ngIf="cartItems.length>0" class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Sepetiniz
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <li *ngFor="let cartItem of cartItems">
-          <a class="dropdown-item" ><span class="badge bg-secondary">{{cartItem.quantity}}
-              </span> {{cartItem.car.brandName}} {{cartItem.car.carName}} 
-              <span (click)="removeFromCart(cartItem.car)" class="badge bg-secondary">Sil</span></a></li>
-      <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item">Sepete Git</a></li>
-    </ul>
-</li>-->

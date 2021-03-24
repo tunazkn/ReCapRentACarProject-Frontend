@@ -10,18 +10,6 @@ import { ToastrService } from 'ngx-toastr';
 export class CartService {
   constructor(private toastrService: ToastrService) {}
 
-  /*addToCart2(car: CarDetailDto) {
-    let item = CartItems.find((c) => c.carDetail.carId === car.carId);
-    if (item) {
-      item.quantity += 1;
-    } else {
-      let cartItem = new CartItem();
-      cartItem.car = car;
-      cartItem.quantity = 1;
-      CartItems.push(cartItem);
-    }
-  }*/
-  //
   addToCart(car: Car) {
     if (this.list().length > 0) {
       this.toastrService.error(
@@ -61,14 +49,5 @@ export class CartService {
 
   list(): CartItem[] {
     return CartItems;
-  }
-
-  removeFromCart2(car: Car) {
-    let item: CartItem = CartItems.find((c) => c.car.carId === car.carId);
-    if (item.quantity > 1) {
-      item.quantity -= 1;
-    } else {
-      CartItems.splice(CartItems.indexOf(item), 1);
-    }
   }
 }

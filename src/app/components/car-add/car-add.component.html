@@ -1,0 +1,78 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header"><h5 class="title">Araç Ekle</h5></div>
+            <div class="card-body">
+                <form [formGroup]="carAddForm">
+                    <div class="mb-3">
+                        <label for="carId">Car Id</label>
+                        <div class="form-group">
+                            <input type="text" 
+                            id="carId" 
+                            formControlName="carId" class="form-control" 
+                            placeholder="Car id"/>
+                        </div>
+                    </div>
+                   
+                    <div class="mb-3">
+                        <label for="brandId">Brand Id</label>
+                        <div class="form-group">
+                            <input type="number" 
+                            id="brandId" 
+                            formControlName="brandId" class="form-control" 
+                            placeholder="Brand id"/>
+                        </div>
+                    </div>
+                    <div  class="mb-3">
+                        <label for="CarName">Car Name</label>
+                        <div class="form-group">
+                            <input type="text" 
+                            id="CarName" 
+                            formControlName="CarName" class="form-control" 
+                            placeholder="Car name"/>
+                        </div>
+                    </div>
+                   <div class="mb-3">
+                    <label for="colorId">Color Id</label>
+                    <div class="form-group">
+                        <input type="number" 
+                        id="colorId" 
+                        formControlName="colorId" class="form-control" 
+                        placeholder="Color id"/>
+                    </div>
+                   </div>
+                    <div  class="mb-3">
+                        <label for="modelYear">Model Year</label>
+                        <div class="form-group">
+                            <input type="number" 
+                            id="modelYear" 
+                            formControlName="modelYear" class="form-control" 
+                            placeholder="Model year"/>
+                        </div>
+                    </div>
+                    <div  class="mb-3">
+                        <label for="dailyPrice">Daily Price</label>
+                        <div class="form-group">
+                            <input type="number" 
+                            id="dailyPrice" 
+                            formControlName="dailyPrice" class="form-control" 
+                            placeholder="Daily Price"/>
+                        </div>
+                    </div>
+                    <div  class="mb-3">
+                        <label for="description">Description</label>
+                        <div class="form-group">
+                            <input type="text" 
+                            id="description" 
+                            formControlName="description" class="form-control" 
+                            placeholder="Description"/>
+                        </div>
+                    </div>                    
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+            </div>
+        </div>
+    </div>
+</div>

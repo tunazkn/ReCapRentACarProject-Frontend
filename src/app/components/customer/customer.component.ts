@@ -23,27 +23,3 @@ export class CustomerComponent implements OnInit {
     })
   }
 }
-//
-  //
-  //customerDetails: CustomerDetailDto[] = [];
-  //currentCustomer:Customer;
-  //dataLoaded=false;
-//
- // constructor(private customerService: CustomerService) { }
-////
-// / ngOnInit(): void {
-//    this.getCustomerDetails();
-//  }
-//
- // getCustomerDetails() {
-  //  this.customerService.getCustomerDetails().subscribe((response) => {
-   //   this.customerDetails = response.data;
-    //  this.dataLoaded =true;
-    //})
- // }
- // 
- // setCurruntCustomer(customer: Customer) {
-  //  this.currentCustomer=customer;
-//  /}/
-//}
-//

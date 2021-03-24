@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';
 import { Color } from '../models/color';
 import { environment } from '../../environments/environment';
+import { ResponseModel } from '../models/responseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -16,11 +17,16 @@ export class ColorService {
   getColors():Observable<ListResponseModel<Color>>{
     return this.httpClient.get<ListResponseModel<Color>>(this.apiUrl+ 'colors')
   }
-  //alltı benm
-  apiUrl2 = 'https://localhost:44334/api/colors/getall';
-
   
-  getColors2():Observable<ListResponseModel<Color>> {
-    return this.httpClient.get<ListResponseModel<Color>>(this.apiUrl);
+  getColorById(id: number): Observable<ListResponseModel<Color>> {
+    return this.httpClient.get<ListResponseModel<Color>>(this.apiUrl + 'colors/id?id=' + id);
+  }
+
+  addColor(color:Color):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'colors/add',color);
+  }
+
+  updateColor(color: Color): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'colors/update', color);
   }
 }

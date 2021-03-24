@@ -17,7 +17,7 @@ import {ToastrService} from 'ngx-toastr';
 export class CarDetailComponent implements OnInit {
   carDetails:Car[];
   faLira = faLiraSign;
-  apiUrl = environment.baseUrl;
+  apiUrl = environment.baseUrl ;
   rentalDetail: Rental[];
 
   constructor(private carService:CarService,private activatedRoute:ActivatedRoute,

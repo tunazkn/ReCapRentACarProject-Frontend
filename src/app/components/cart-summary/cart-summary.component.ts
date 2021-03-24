@@ -16,7 +16,6 @@ import {RentalDetailDto} from '../../models/rentalDetailDto';
   styleUrls: ['./cart-summary.component.css']
 })
 export class CartSummaryComponent implements OnInit {
-
   cartItems: CartItem[] = [];
   baseUrl = environment.baseUrl;
   model = new NgbDate(new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate());
@@ -27,7 +26,8 @@ export class CartSummaryComponent implements OnInit {
   carDetailReturnDate: Date;
   
   constructor(private cartService: CartService, private rentalService: RentalService,
-    private  toastrService: ToastrService, private router: Router) { }
+    private  toastrService: ToastrService, private router: Router) { 
+    }
 
   ngOnInit(): void {
     this.getCart();
@@ -62,6 +62,7 @@ export class CartSummaryComponent implements OnInit {
       this.toastrService.info('Ödeme sayfasına yönlendiriliyorsunuz...', 'Ödeme İşlemleri');
     }
   }
+  
   checkCarReturnDate(): boolean {
     if (this.carDetailReturnDate != undefined) {
       var fullDate = this.carDetailReturnDate.toString().split('-', 3);
@@ -117,8 +118,4 @@ export class CartSummaryComponent implements OnInit {
       this.router.navigate(['/']);
     }
   }
-  //removeFromCart2(car:CarDetailDto){
-  //  this.cartService.removeFromCart(car);
-  //  this.toastrService.error(car.brandName + " " + car.carName + " sepetten silindi.", "Silindi");
-  //}
 }

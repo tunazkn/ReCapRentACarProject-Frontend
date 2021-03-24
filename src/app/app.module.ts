@@ -14,17 +14,22 @@ import { RentalComponent } from './components/rental/rental.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ToastrModule} from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { PaymentComponent } from './components/payment/payment.component';
 import { FilterComponent } from './components/filter/filter.component';
-//
 import { FooterComponent } from './components/footer/footer.component';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { from } from 'rxjs';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
+import { CarAddComponent } from './components/car-add/car-add.component';
+import { CarUpdateComponent } from './components/car-update/car-update.component';
+import { ColorUpdateComponent } from './components/color-update/color-update.component';
+import { BrandUpdateComponent } from './components/brand-update/brand-update.component';
+import { ColorAddComponent } from './components/color-add/color-add.component';
+import { BrandAddComponent } from './components/brand-add/brand-add.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,13 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
     CartSummaryComponent,
     CarDetailComponent,
     PaymentComponent,
-    FilterComponent
+    FilterComponent,
+    CarAddComponent,
+    CarUpdateComponent,
+    ColorUpdateComponent,
+    BrandUpdateComponent,
+    ColorAddComponent,
+    BrandAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,10 +64,10 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
     BrowserAnimationsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({
-      positionClass : "toast-bottom-right"
-    })
+      positionClass: 'toast-bottom-right',
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -17,16 +17,4 @@ export class CustomerService {
   getCustomers():Observable<ListResponseModel<Customer>>{
     return this.httpClient.get<ListResponseModel<Customer>>(this.apiUrl+ 'customers/getdetails');
   }
-
-  //altı benm
-  apiUrlGetAll = 'https://localhost:44334/api/customers/getall';
-  apiUrlGetDetails = 'https://localhost:44334/api/customers/getdetails';
-
-
-  getCustomers2():Observable<ListResponseModel<CustomerDetailDto>> {
-    return this.httpClient.get<ListResponseModel<CustomerDetailDto>>(this.apiUrlGetAll);
-  }
-  getCustomerDetails2():Observable<ListResponseModel<CustomerDetailDto>> {
-    return this.httpClient.get<ListResponseModel<CustomerDetailDto>>(this.apiUrlGetDetails);
-  }
 }

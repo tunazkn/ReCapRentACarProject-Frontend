@@ -21,37 +21,3 @@
       </tr>
   </tbody>
 </table>
-
-<!---
-<table *ngIf="dataLoaded != false" class="table">
-  <thead>
-    <tr>
-      <td>Id</td>
-      <td>Car Id</td>
-      <td>Car Name</td>
-      <td>Brand Name</td>
-      <td>Color Name</td>
-      <td>Company Name</td>
-      <td>Customer Name</td>
-      <td>Model Year</td>
-      <td>Daily Price</td>
-      <td>Rent Date</td>
-      <td>Return Date</td>
-    </tr>
-  </thead>
-  <tr *ngFor="let rentalDetail of rentalDetails">
-    <td>{{ rentalDetail.id }}</td>
-    <td>{{ rentalDetail.carId }}</td>
-    <td>{{ rentalDetail.carName }}</td>
-    <td>{{ rentalDetail.brandName }}</td>
-    <td>{{ rentalDetail.colorName }}</td>
-    <td>{{ rentalDetail.companyName }}</td>
-    <td>{{ rentalDetail.customerName }}</td>
-    <td>{{ rentalDetail.modelYear }}</td>
-    <td>{{ rentalDetail.dailyPrice }}</td>
-    <td>{{ rentalDetail.rentDate }}</td>
-    <td *ngIf="rentalDetail.returnDate == null">Teslim Edilmedi</td>
-    <td *ngIf="rentalDetail.returnDate != null">{{ rentalDetail.returnDate }}</td>
-  </tr>
-</table>
--->

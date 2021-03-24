@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
   <a class="navbar-brand" routerLink="/">Rent A Car Project</a>
   <button
     class="navbar-toggler"
@@ -11,22 +12,46 @@
   >
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/">Anasayfa </a>
+        <a class="nav-link" routerLink="/">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/brands">Brands</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" 
+        data-bs-toggle="dropdown" aria-expanded="false">Cars</a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li>          <a class="dropdown-item" routerLink="/car/add">Add Car</a></li>
+          <li><a class="dropdown-item" routerLink="/car/add">Another action</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+ 
       </li>
-      <li>
-        <a class="nav-link" routerLink="/colors">Colors</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" 
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Brands</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/brand/add">Add Brand</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" 
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Colors</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/color/add">Add Color</a>
+        </div>
       </li>
       <li>
         <a class="nav-link" routerLink="/rentals">Rentals</a>
-      </li>
-      <li>
-        <a class="nav-link" routerLink="/customers">Customers</a>
+      </li> 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" 
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Customers</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item">Add Customer</a>
+        </div>
       </li>
     </ul>
   </div>
@@ -39,6 +64,7 @@
     />
     <button class="btn btn-outline-success" type="submit">Search</button>
   </form>
+  </div>
 </nav>
 <!---<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">  

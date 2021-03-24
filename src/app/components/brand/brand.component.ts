@@ -40,25 +40,4 @@ export class BrandComponent implements OnInit {
   allBrandSelected() {
     return this.currentBrand === undefined ? true : false;
   }
-  getBrands2() {
-    this.brandService.getBrands().subscribe((response) => {
-      this.brands = response.data;
-      this.dataLoaded = true;
-    });
-  }
-
-  setCurrentBrand2(brand: Brand) {
-    this.currentBrand = brand;
-  }
-  getCurrentBrandClass2(brand: Brand) {
-    if (brand == this.currentBrand) {
-      return "list-group-item active";
-    }
-    else{
-      return "list-group-item";
-    }
-  }
-  CleanCurrentBrand(){
-    this.getBrands();
-  }
 }

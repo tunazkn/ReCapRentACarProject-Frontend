@@ -8,7 +8,6 @@ import { faLiraSign } from '@fortawesome/free-solid-svg-icons';
 import { environment } from '../../../environments/environment';
 import { RentalService } from '../../services/rental.service';
 import { Rental } from '../../models/rental';
-import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-car',
@@ -23,13 +22,11 @@ export class CarComponent implements OnInit {
   filterText = '';
   rentalDetail: Rental[];
 
-  constructor(
-    private carService: CarService,
+  constructor(private carService: CarService,
     private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService,
     private cartService: CartService,
-    private rentalService: RentalService,
-    private router: Router
+    private rentalService: RentalService, private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -41,6 +38,7 @@ export class CarComponent implements OnInit {
       else this.getCars();
     })
   }
+
   getCarByBrandAndColor(brandId: number, colorId: number) {
     this.carService
       .getCarByBrandAndColor(brandId, colorId)
@@ -67,6 +65,7 @@ export class CarComponent implements OnInit {
       this.dataLoaded = true;
     })
   }
+  
   getCarsByColor(colorId:number) {
     this.carService.getCarsByColor(colorId).subscribe(response=>{
       this.cars = response.data
@@ -85,33 +84,3 @@ export class CarComponent implements OnInit {
     this.router.navigate(['/cart'])
   }
 }
-
-/*
-  getCarDetails() {
-    this.carService.getCarDetails().subscribe((response) => {
-      this.carDetails = response.data;
-      this.dataLoaded = true;
-    });
-  }
-  getCarsByBrand(brandId: number) {
-    this.carService.getCarsByBrand(brandId).subscribe((response) => {
-      this.carDetails = response.data;
-      this.dataLoaded = true;
-    });
-  }
-  getCarsByColor(colorId: number) {
-    this.carService.getCarsByColor(colorId).subscribe((response) => {
-      this.carDetails = response.data;
-      this.dataLoaded = true;
-    });
-  }
-
-  addToCart(carDetail: CarDetailDto) {
-    this.toastrService.success(
-      'Sepete eklendi',
-      carDetail.brandName + ' ' + carDetail.carName
-    );
-    this.cartService.addToCart(carDetail);
-  }
-}
-*/

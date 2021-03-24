@@ -47,14 +47,6 @@ export class PaymentComponent implements OnInit {
       expirationMonth: ['', Validators.required],
       expirationYear: ['', Validators.required],
       cvv: ['', Validators.required]
-
-
-      // cardHolderName: ['', Validators.required, Validators.maxLength(50)],
-      // cardNumber: ['', Validators.required, Validators.maxLength(16), Validators.minLength(16)],
-      // expirationMonth: ['', Validators.required, Validators.min(1), Validators.max(12)],
-      // expirationYear: ['', Validators.required, Validators.min(new Date().getFullYear()),
-      //   Validators.max(new Date().getUTCFullYear() + 30)],
-      // cvv: ['', Validators.required,Validators.minLength(3),Validators.maxLength(3)],
     });
   }
 

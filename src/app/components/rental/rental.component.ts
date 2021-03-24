@@ -11,7 +11,6 @@ import { RentalService } from 'src/app/services/rental.service';
 export class RentalComponent implements OnInit {
   rentals:Rental[]=[];
   dataLoaded = false;
-  currentRental:RentalDetailDto;
   
   constructor(private rentalService: RentalService) { }
 
@@ -24,14 +23,4 @@ export class RentalComponent implements OnInit {
       this.dataLoaded = true;
     })
   }
-  //
-  //getRentalDetails() {
-  //  this.rentalService.getRentalDetails().subscribe((response) => {
-  //    this.rentals = response.data;
-  //    this.dataLoaded =true;
-  // })
-  //}
-  //setCurruntRentalDetail(rentalDetailDto: RentalDetailDto) {
-  //  this.currentRental=rentalDetailDto;
-  //}
 }
