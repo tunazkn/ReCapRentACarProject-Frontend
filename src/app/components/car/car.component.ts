@@ -80,7 +80,7 @@ export class CarComponent implements OnInit {
     if (this.cartService.list().length > 0) {
       this.router.navigate(['/cart'])
     }
-    this.cartService.addToCart(car);
+    this.cartService.addCart(car);
     this.router.navigate(['/cart'])
   }
 }

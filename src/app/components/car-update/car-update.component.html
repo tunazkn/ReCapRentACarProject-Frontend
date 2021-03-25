@@ -5,7 +5,7 @@
         <div class="card-body">
           <form [formGroup]="carUpdateForm">
             <div class="mb-3 row">
-            <label class="col-sm-2 col-form-label">Marka Seçiniz</label>
+            <label for="brandId" class="col-sm-2 col-form-label">Marka Seçiniz</label>
             <div class="col-sm-10">
               <select class="form-control" formControlName="brandId">
                 <option *ngFor="let brand of brands" [ngValue]="brand.brandId" >{{brand.brandName}}</option>
@@ -14,7 +14,7 @@
           </div>
 
             <div class="mb-3 row">
-              <label class="col-sm-2 col-form-label">model Seçiniz</label>
+              <label class="col-sm-2 col-form-label">Model Seçiniz</label>
               <div class="col-sm-10" *ngFor="let car of carDetails ">
                 <input type="text" value="{{car.carName}}">
               </div>

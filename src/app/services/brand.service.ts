@@ -20,7 +20,7 @@ export class BrandService {
   getBrands():Observable<ListResponseModel<Brand>> {
     return this.httpClient.get<ListResponseModel<Brand>>(this.apiUrl+ 'brands/');
   }
-  addToBrand(brand:Brand):Observable<ResponseModel>{
+  addBrand(brand:Brand):Observable<ResponseModel>{
     return this.httpClient.post<ResponseModel>(this.apiUrl+ 'brands/add',brand);
   }
 

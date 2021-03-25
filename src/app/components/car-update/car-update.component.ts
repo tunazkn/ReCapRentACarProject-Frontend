@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Brand } from 'src/app/models/brand';
-import { Car } from 'src/app/models/car';
+import { Brand } from 'src/app/models/brand';import { Car } from 'src/app/models/car';
 import { Color } from 'src/app/models/color';
 import { BrandService } from 'src/app/services/brand.service';
 import { CarService } from 'src/app/services/car.service';
@@ -18,8 +17,7 @@ export class CarUpdateComponent implements OnInit {
   carUpdateForm: FormGroup;
   brands: Brand[] = [];
   colors: Color[] = [];
-  carId: number;
-  carDetails: Car[]=[];
+  carId: number;  carDetails: Car[]=[];
 
   constructor(private formBuilder: FormBuilder,
     private carService: CarService,
@@ -27,13 +25,13 @@ export class CarUpdateComponent implements OnInit {
     private brandService: BrandService,
     private colorService: ColorService,
     private activatedRoute: ActivatedRoute
-    ) { }
+    ) { 
+    }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       if (params['carId']) {
-        this.carId = parseInt(params['carId']);
-        this.getCarDetailById(params["carId"]);
+        this.carId = parseInt(params['carId']);        this.getCarDetailById(params["carId"]);
       }
     });  
     this.createCarUpdateForm();
@@ -48,8 +46,7 @@ export class CarUpdateComponent implements OnInit {
       brandId: ['', Validators.required],
       colorId: ['', Validators.required],
       modelYear: ['', Validators.required],
-      dailyPrice: ['', Validators.required],
-      description: ['', Validators.required]
+      dailyPrice: ['', Validators.required],      description: ['', Validators.required]
     });
   }
 
@@ -64,12 +61,7 @@ export class CarUpdateComponent implements OnInit {
       this.colors = response.data;
     });
   }
-  getCarDetailById(carId:number){
-      this.carService.getCarDetail(carId).subscribe(response=>{
-        this.carDetails = response.data
-      })
-    }
-
+  
   updateCar() {
     if (this.carUpdateForm.valid) {
       let carModel = Object.assign({}, this.carUpdateForm.value);
@@ -85,5 +77,11 @@ export class CarUpdateComponent implements OnInit {
     } else {
       this.toastrService.error('Form Bilgileriniz Eksik!', 'Hata');
     }
+  }
+  
+  getCarDetailById(carId:number){
+    this.carService.getCarDetail(carId).subscribe(response=>{
+      this.carDetails = response.data
+    })
   }
 }

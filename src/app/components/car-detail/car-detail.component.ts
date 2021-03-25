@@ -35,6 +35,7 @@ export class CarDetailComponent implements OnInit {
   getCarDetail(carId:number){
     this.carService.getCarDetail(carId).subscribe(response=>{
       this.carDetails = response.data
+      this.toastrService.error("Arabalar Listelendi.","Doğrulama Hatası")
     })
   }
 
@@ -45,7 +46,7 @@ export class CarDetailComponent implements OnInit {
     if (this.cartService.list().length > 0) {
       this.router.navigate(['/cart'])
     }
-    this.cartService.addToCart(car);
+    this.cartService.addCart(car);
     this.router.navigate(['/cart'])
   }
 }

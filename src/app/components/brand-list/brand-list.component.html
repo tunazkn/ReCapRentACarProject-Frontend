@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row my-2 ml-2">
+    <button
+      routerLink="/brand/add"
+      type="button"
+      class="btn btn-success center rounded-pill"
+    >
+      Add New Brand
+    </button>
+  </div>
+  <div class="row">
+    <div
+      *ngIf="dataLoaded == false"
+      class="spinner-border text-primary"
+      role="status"
+    >
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <table
+      *ngIf="dataLoaded != false"
+      class="table table-hover table-striped table-bordered"
+    >
+      <thead>
+        <tr>
+          <th scope="col">Brand Id</th>
+          <th scope="col">Brand Name</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let brand of brands">
+          <td>{{ brand.brandId }}</td>
+          <th scope="row">{{ brand.brandName }}</th>
+          <td>
+            <button
+              routerLink="/brand/update/{{ brand.brandId }}"
+              type="button"
+              class="btn btn-success"
+            >
+              Edit
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!--<ul *ngIf="dataLoaded != false">
+  <button routerLink="/cars" (click)="CleanCurrentBrand()" type="button" 
+  class="btn btn-info mb-2"> Tüm Arabaları Gör </button>
+  <hr>
+  <h3>Brands</h3>
+
+  <li (click)="setCurrentBrand(brand)"
+    *ngFor="let brand of brands" [class]="getCurrentBrandClass(brand)">{{ brand.brandName }}</li>
+</ul>
+
+<h5 *ngIf="currentBrand">{{ currentBrand.brandName }} seçtiniz</h5>
+
+<!--<table *ngIf="dataLoaded!=false" class="table">
+    <thead>
+      <tr>
+        <td>User Id</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Email</td>
+        <td>Company Name</td>
+      </tr>
+    </thead>
+    <tr *ngFor="let customerDetail of customerDetails">
+      <td>{{ customerDetail.userId }}</td>
+      <td>{{ customerDetail.firstName }}</td>
+      <td>{{ customerDetail.lastName }}</td>
+      <td>{{ customerDetail.email }}</td>
+      <td>{{ customerDetail.companyName }}</td>
+    </tr>
+  </table>
+  <td><button (click)="addToCart(carDetail)" type="button" class="btn btn-success">Sepete ekle</button></td>
+-->

@@ -14,14 +14,16 @@ import { BrandUpdateComponent } from './components/brand-update/brand-update.com
 import { ColorAddComponent } from './components/color-add/color-add.component';
 import { ColorUpdateComponent } from './components/color-update/color-update.component';
 import { CarUpdateComponent } from './components/car-update/car-update.component';
+import { BrandListComponent } from './components/brand-list/brand-list.component';
+import { ColorListComponent } from './components/color-list/color-list.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: CarComponent },
-  { path: 'brands', component: BrandComponent },
+  { path: 'brand', component: BrandListComponent },
   { path: 'brand/add', component: BrandAddComponent },
   { path: 'brand/update/:id', component: BrandUpdateComponent },
 
-  { path: 'colors', component: ColorComponent },
+  { path: 'color', component: ColorListComponent },
   { path: 'color/add', component: ColorAddComponent },
   { path: 'color/update/:id', component: ColorUpdateComponent },
 
@@ -34,7 +36,7 @@ const routes: Routes = [
 
   { path: 'cars', component: CarComponent },
   { path: 'cars/add', component: CarAddComponent },
-  {path:"car/update/:carId",component:CarUpdateComponent},
+  { path: 'car/update/:carId',component:CarUpdateComponent},
   { path: 'cars/brand/:brandId', component: CarComponent },
   { path: 'cars/color/:colorId', component: CarComponent },
   { path: 'car/details/:carId', component: CarDetailComponent },
