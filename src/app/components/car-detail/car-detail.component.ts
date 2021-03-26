@@ -35,7 +35,7 @@ export class CarDetailComponent implements OnInit {
   getCarDetail(carId:number){
     this.carService.getCarDetail(carId).subscribe(response=>{
       this.carDetails = response.data
-      this.toastrService.error("Arabalar Listelendi.","Doğrulama Hatası")
+      this.toastrService.success("Arabalar Listelendi.","Başarılı")
     })
   }
 

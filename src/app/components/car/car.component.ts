@@ -81,6 +81,7 @@ export class CarComponent implements OnInit {
       this.router.navigate(['/cart'])
     }
     this.cartService.addCart(car);
+    this.toastrService.success("Added to Cart","Successed")
     this.router.navigate(['/cart'])
   }
 }

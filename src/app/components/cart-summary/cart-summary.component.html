@@ -46,7 +46,7 @@
                              name="dp" [(ngModel)]="model" ngbDatepicker
                              #d="ngbDatepicker" (ngModelChange)="calculatePrice()">
                       <div class="input-group-append">
-                        <button class="icon-calendar" (click)="d.toggle()" type="button">Kiralama Tarihi</button>
+                        <button class="icon-calendar" (click)="d.toggle()" type="button">Rent Date: </button>
                       </div>
                     </div>
                   </div>
@@ -58,10 +58,9 @@
           <div class="pull-right" style="margin-top: 50px;">
             <button (click)="createRental()"
                     routerLink="/payment/"
-                    type="button" class="btn btn-success pull-right"> Ödemeye Git
-            </button>
+                    type="button" class="btn btn-success pull-right"> Got to Pay </button>
             <div class="pull-right" style="margin: 5px;margin-right: 10px;">
-              Toplam Fiyat: <b>{{totalPrice}} TL</b>
+              total Price: <b>{{totalPrice}} TL</b>
             </div>
           </div>
         </div>

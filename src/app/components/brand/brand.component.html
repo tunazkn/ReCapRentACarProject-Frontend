@@ -4,7 +4,7 @@
   class="form-select mb-1"
   aria-label="Default select example">
   <option [selected]="allBrandSelected()" [ngValue]="allBrand">
-    Tüm Araçları Getir
+    All Brands
   </option>
   <option *ngFor="let brand of brands" [ngValue]="brand">
     {{ brand.brandName }}

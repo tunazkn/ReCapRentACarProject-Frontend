@@ -5,7 +5,7 @@
             <div class="card-body">
                 <form [formGroup]="carAddForm">
                     <div class="mb-3">
-                        <label for="carId">Car Id</label>
+                        <label for="carId">Car Id: </label>
                         <div class="form-group">
                             <input type="text" 
                             id="carId" 
@@ -15,7 +15,7 @@
                     </div>
                    
                     <div class="mb-3">
-                        <label for="brandId">Brand Id</label>
+                        <label for="brandId">Brand Id: </label>
                         <div class="form-group">
                             <input type="number" 
                             id="brandId" 
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div  class="mb-3">
-                        <label for="CarName">Car Name</label>
+                        <label for="CarName">Car Name: </label>
                         <div class="form-group">
                             <input type="text" 
                             id="CarName" 
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                    <div class="mb-3">
-                    <label for="colorId">Color Id</label>
+                    <label for="colorId">Color Id: </label>
                     <div class="form-group">
                         <input type="number" 
                         id="colorId" 
@@ -42,7 +42,7 @@
                     </div>
                    </div>
                     <div  class="mb-3">
-                        <label for="modelYear">Model Year</label>
+                        <label for="modelYear">Model Year: </label>
                         <div class="form-group">
                             <input type="number" 
                             id="modelYear" 
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div  class="mb-3">
-                        <label for="dailyPrice">Daily Price</label>
+                        <label for="dailyPrice">Daily Price: </label>
                         <div class="form-group">
                             <input type="number" 
                             id="dailyPrice" 
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                     <div  class="mb-3">
-                        <label for="description">Description</label>
+                        <label for="description">Description: </label>
                         <div class="form-group">
                             <input type="text" 
                             id="description" 
@@ -71,7 +71,7 @@
                 </form>
             </div>
             <div class="card-footer">
-                <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+                <button class="btn btn-fill btn-primary" (click)="addCar()">Add New</button>
             </div>
         </div>
     </div>

@@ -56,16 +56,16 @@ export class CarAddComponent implements OnInit {
     if(this.carAddForm.valid){
       let carModel = Object.assign({},this.carAddForm.value);
       this.carService.addCar(carModel).subscribe(response=>{
-        this.toastrService.success(response.message,"Başarılı!")
+        this.toastrService.success(response.message,"Successed!")
       },responseError=>{
         if(responseError.error.ValidationErrors.length>0){
           for(let i=0;i<responseError.error.ValidationErrors.length;i++){
-            this.toastrService.error(responseError.error.ValidationErrors[i].ErrorMessage,"Doğrulama Hatası")
+            this.toastrService.error(responseError.error.ValidationErrors[i].ErrorMessage,"Verification Error")
           }
         }
       })
     }else{
-      this.toastrService.error("Formunuz eksik","Dikkat!")
+      this.toastrService.error("Missing Space in Form.","Warning!")
     }
   }
 }

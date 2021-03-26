@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Brand } from 'src/app/models/brand';
 import { BrandService } from 'src/app/services/brand.service';
-import {Filters} from '../../models/filters';
+import { Filters } from '../../models/filters';
 
 @Component({
   selector: 'app-brand',

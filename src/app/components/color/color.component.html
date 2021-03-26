@@ -5,7 +5,7 @@
   aria-label="Default select example"
 >
   <option [selected]="allColorsSelected()" [ngValue]="allColor">
-    Tüm Renkleri Getir
+    All Color
   </option>
   <option *ngFor="let color of colors" [ngValue]="color">
     {{ color.colorName }}

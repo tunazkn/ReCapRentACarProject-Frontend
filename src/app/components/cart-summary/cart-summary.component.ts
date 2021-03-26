@@ -59,7 +59,7 @@ export class CartSummaryComponent implements OnInit {
         customerId: 1
       };
       this.router.navigate(['/payment/', JSON.stringify(MyRental)]);
-      this.toastrService.info('Ödeme sayfasına yönlendiriliyorsunuz...', 'Ödeme İşlemleri');
+      this.toastrService.info('You are being redirected to the payment page...', 'Payment Transactions');
     }
   }
   

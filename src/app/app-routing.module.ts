@@ -19,11 +19,11 @@ import { ColorListComponent } from './components/color-list/color-list.component
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: CarComponent },
-  { path: 'brand', component: BrandListComponent },
+  { path: 'brands', component: BrandListComponent },
   { path: 'brand/add', component: BrandAddComponent },
   { path: 'brand/update/:id', component: BrandUpdateComponent },
 
-  { path: 'color', component: ColorListComponent },
+  { path: 'colors', component: ColorListComponent },
   { path: 'color/add', component: ColorAddComponent },
   { path: 'color/update/:id', component: ColorUpdateComponent },
 
@@ -35,7 +35,7 @@ const routes: Routes = [
   { path: 'payment/:myrental', component: PaymentComponent },
 
   { path: 'cars', component: CarComponent },
-  { path: 'cars/add', component: CarAddComponent },
+  { path: 'car/add', component: CarAddComponent },
   { path: 'car/update/:carId',component:CarUpdateComponent},
   { path: 'cars/brand/:brandId', component: CarComponent },
   { path: 'cars/color/:colorId', component: CarComponent },
