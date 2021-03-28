@@ -1,41 +1,44 @@
 <div class="card" style="margin-bottom: 15px; margin-top: 5px;">
-<div class="card-body">
-  <ngb-carousel>
-    <ng-template ngbSlide *ngFor="let car of carDetails">
-      <div class="picsum-img-wrapper">
-        <img
-          class="d-block w-100"
-          style="width: 500px; height: 430px"
-          src="{{ apiUrl }}{{ car.imagePath }}" 
-          alt="{{ car.brandName }} {{ car.carName }}"
-        />
+  <div class="row">
+    <div class="col-md-5">
+      <div class="card-body">
+        <ngb-carousel #carousel [interval]="3000" >
+          <ng-template ngbSlide *ngFor="let car of carDetails; index as i">
+            <div class="carousel-caption">
+              <h3>Image {{i + 1}}</h3>
+            </div>
+            <a routeLink="/" rel="nofollow noopener noreferrer">
+              <div class="picsum-img-wrapper">
+                <img src="{{ apiUrl }}{{ car.imagePath }}" title="{{ car.brandName }} {{ car.carName }}" >
+              </div>
+            </a>
+          </ng-template>
+        </ngb-carousel>
+        <br>
+        <p> Not: Resimler slayt şeklinde olup otomatik olarak 3 saniye süre ile değişmektedir. Mause ile üzerine geldiğinizde durmaktadır. 
+          <br>İsterseniz manuel olarak değiştirebilirsiniz...</p>
       </div>
-    </ng-template>
-  </ngb-carousel>
-  <br>
-  <p > Not: Resimler slayt şeklinde olup otomatik olarak değişmektedir. İsterseniz manuel olarak değiştirebilirsiniz...</p>
-</div>
-<div class="col-md-5">
-<div class="card" *ngFor="let car of carDetails; let i = index">
-  <div class="card-body" *ngIf="i < 1">
-    <h5 class="card-title">{{ car.brandName }} {{ car.carName }}</h5>
-    <hr />
-    <p class="card-text"><b>Brand: </b> {{ car.brandName }}</p>
-    <p class="card-text"><b>Model: </b> {{ car.carName }}</p>
-    <p class="card-text"><b>Color: </b> {{ car.colorName }}</p>
-    <p class="card-text"><b>Model Year: </b> {{ car.modelYear }}</p>
-    <hr>
-    <p class="card-text" style="height: 100px;"><b>Description: </b> {{ car.description }}.</p>
-    <hr>
-    <p class="card-text">
-      <b>Fiyat: </b> {{ car.dailyPrice }} <fa-icon [icon]="faLira"></fa-icon>
-    </p>
-    <hr>
-    <a (click)="addCart(car)" class="btn btn-primary w-25">Rent It</a>
-    <a routerLink="/car/update/{{car.carId}}" class="btn btn-primary"style="margin-right: 5px;">Arabayı Düzenle</a>
-      <a routerLink="/color/update/{{car.colorId}}" class="btn btn-primary"style="margin-right: 5px;">Rengi Düzenle</a>
-      <a routerLink="/brand/update/{{car.brandId}}" class="btn btn-primary">Markayı Düzenle</a>
+    </div>
+    <div class="col-md-6">
+      <div class="card" *ngFor="let car of carDetails; let i = index">
+        <div class="card-body" *ngIf="i < 1">
+          <h5 class="card-title">{{ car.brandName }} {{ car.carName }}</h5>
+          <hr />
+          <p class="card-text"><b>Brand: </b> {{ car.brandName }}</p>
+          <p class="card-text"><b>Model: </b> {{ car.carName }}</p>
+          <p class="card-text"><b>Color: </b> {{ car.colorName }}</p>
+          <p class="card-text"><b>Model Year: </b> {{ car.modelYear }}</p>
+          <hr>
+          <p class="card-text" style="min-height: 100px;"><b>Description: </b> {{ car.description }}.</p>
+          <hr>
+          <p class="card-text">
+            <b>Fiyat: </b> {{ car.dailyPrice |currency: "₺ " }}</p>
+          <hr>
+          <a (click)="addCart(car)" class="btn btn-primary w-25">Rent It</a>
+          <a routerLink="/car/update/{{car.carId}}" class="btn btn-primary fa-pull-right" style="margin-right: 5px;">Arabayı
+            Düzenle</a>
+        </div>
+
+      </div>
+    </div>
   </div>
-</div>
-</div>
-</div>

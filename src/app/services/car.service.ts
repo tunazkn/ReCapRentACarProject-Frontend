@@ -30,6 +30,13 @@ export class CarService {
     return this.httpClient.get<ListResponseModel<Car>>(newPath);
   }
 
+  //burada bu tarz işlemler içni yani tek bir değer geliyorsa single response model kullanacaz. buna göre refactor edicez kodları
+  //o yüzden burayı hatalı bıraktım. 
+  //ilerleyen zamanlarda bakıcam buraya.
+  ///bunu yaparken aynı zamanda backend i de kontrol edilmeli ama 
+  //mesela auth için result.data dönüyordu ama biz single kullanunca data, success ve message kullanıypruz o yüzden direk result döndürmek lazım.
+  //result ile bir araba bilgisi ile mesaj ve success glecek.
+  //bunu color ve brand için de ypabiliriz. ve yapıcaz da .
   getCarDetail(carId: number): Observable<ListResponseModel<Car>> {
     let newPath = this.apiUrl + 'cars/detailsbyid?carId=' + carId;
     return this.httpClient.get<ListResponseModel<Car>>(newPath);

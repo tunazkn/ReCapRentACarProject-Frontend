@@ -1,68 +1,59 @@
-<div *ngIf="dataLoaded == false" class="spinner-border" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div>
-<div class="mb-3">
-  <label for="filterText" class="form-group">Find A Car</label>
-  <input
-    type="text"
-    [(ngModel)]="filterText"
-    (ngModelChange)="changeFilterTextSize(filterText)"
-    class="form-control"
-    id="filterText"
-    placeholder="Search"
-  />
-</div>
+<div class="row">
+  <div class="col-md-3">
+    <app-filter></app-filter>
+  </div>
 
-<div *ngIf="filterText.length > 0" class="alert alert-success">
-  "{{ filterText }}" searched.
-</div>
+  <div class="col-md-9">
+    <div *ngIf="dataLoaded == false" class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="mb-3">
+      <label for="filterText" class="form-group">Find A Car</label>
+      <input type="text" [(ngModel)]="filterText" (ngModelChange)="changeFilterTextSize(filterText)"
+        class="form-control" id="filterText" placeholder="Search" />
+    </div>
 
-<div class="row" *ngIf="dataLoaded == true">
-  <div
-    class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3"
-    *ngFor="let car of cars | filterPipe: filterText"
-  >
-    <div class="card mb-3 mr-3">
-      <img
-        class="card-img-top"
-        src="{{ apiUrl }}{{ car.imagePath }}"
-        alt="{{ car.brandName }} {{ car.carName }}"
-        width="318px" height="200" routerLink="/car/details/{{ car.carId }}"
-      />
-      <div class="card-body">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <b>Brand:</b><span style="float: right">{{ car.brandName }}</span>
-          </li>
-          <li class="list-group-item">
-            <b>Model:</b><span style="float: right">{{ car.carName }}</span>
-          </li>
-          <li class="list-group-item">
-            <b>Color:</b><span style="float: right">{{ car.colorName }}</span>
-          </li>
-          <li class="list-group-item">
-            <b>Year:</b> <span style="float: right">{{ car.modelYear }}</span>
-          </li>
-          <li class="list-group-item">
-            <b>Daily Price:</b
-            ><span style="float: right"
-              >{{ car.dailyPrice }} <fa-icon [icon]="faLira"></fa-icon
-            ></span>
-          </li>
-        </ul>
-      </div>
+    <div *ngIf="filterText.length > 0" class="alert alert-success">
+      "{{ filterText }}" searched.
+    </div>
 
-      <div class="card-footer bg-transparent">
-        <button
-          routerLink="/car/details/{{ car.carId }}"
-          type="button"
-          class="btn btn-primary mb-2"
-        >
-          More
-        </button>
-        <button (click)="addToCart(car)" class="btn btn-primary fa-pull-right">
-          Rent The Car
-        </button>
+    <div class="row" *ngIf="dataLoaded == true">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let car of cars | filterPipe: filterText">
+        <div class="card mb-3 mr-3" style="min-height: 550px">
+          <img class="card-img-top" src="{{ apiUrl }}{{ car.imagePath }}" alt="{{ car.brandName }} {{ car.carName }}"
+            width="320px" min-height="280" style="min-height: 200px; max-height: 200px"
+            routerLink="/car/details/{{ car.carId }}" />
+          <div class="card-body">
+            <h5 class="card-title">{{ car.brandName }} {{ car.carName }}</h5>
+            <small class="card-text">{{ car.description }}</small>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <b>Brand:</b><span style="float: right">{{ car.brandName }}</span>
+            </li>
+            <li class="list-group-item">
+              <b>Model:</b><span style="float: right">{{ car.carName }}</span>
+            </li>
+            <li class="list-group-item">
+              <b>Color:</b><span style="float: right">{{ car.colorName }}</span>
+            </li>
+            <li class="list-group-item">
+              <b>Year:</b> <span style="float: right">{{ car.modelYear }}</span>
+            </li>
+            <li class="list-group-item">
+              <b>Daily Price:</b><span style="float: right"><b>{{ car.dailyPrice |currency: "₺ "}}</b></span>
+            </li>
+          </ul>
+
+          <div class="card-footer bg-transparent">
+            <button routerLink="/car/details/{{ car.carId }}" type="button" class="btn btn-primary mb-2">
+              More
+            </button>
+            <button (click)="addToCart(car)" class="btn btn-success fa-pull-right">
+              Rent The Car
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

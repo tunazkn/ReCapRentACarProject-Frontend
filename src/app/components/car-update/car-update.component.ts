@@ -17,7 +17,8 @@ export class CarUpdateComponent implements OnInit {
   carUpdateForm: FormGroup;
   brands: Brand[] = [];
   colors: Color[] = [];
-  carId: number;  carDetails: Car[]=[];
+  carId: number;
+  carDetails: Car[];
 
   constructor(private formBuilder: FormBuilder,
     private carService: CarService,

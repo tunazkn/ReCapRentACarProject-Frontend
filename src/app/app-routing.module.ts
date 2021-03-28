@@ -16,31 +16,36 @@ import { ColorUpdateComponent } from './components/color-update/color-update.com
 import { CarUpdateComponent } from './components/car-update/car-update.component';
 import { BrandListComponent } from './components/brand-list/brand-list.component';
 import { ColorListComponent } from './components/color-list/color-list.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', component: CarComponent },
-  { path: 'brands', component: BrandListComponent },
-  { path: 'brand/add', component: BrandAddComponent },
-  { path: 'brand/update/:id', component: BrandUpdateComponent },
+  { path: "", pathMatch: "full", component: CarComponent },
+  { path: "brands", component: BrandListComponent },
+  { path: "brand/add", component: BrandAddComponent },
+  { path: "brand/update/:id", component: BrandUpdateComponent },
 
-  { path: 'colors', component: ColorListComponent },
-  { path: 'color/add', component: ColorAddComponent },
-  { path: 'color/update/:id', component: ColorUpdateComponent },
+  { path: "colors", component: ColorListComponent },
+  { path: "color/add", component: ColorAddComponent },
+  { path: "color/update/:id", component: ColorUpdateComponent },
 
-  { path: 'rentals', component: RentalComponent },
+  { path: "rentals", component: RentalComponent },
 
-  { path: 'customers', component: CustomerComponent },
+  { path: "customers", component: CustomerComponent },
 
-  { path: 'cart', component: CartSummaryComponent },
-  { path: 'payment/:myrental', component: PaymentComponent },
+  { path: "cart", component: CartSummaryComponent },
+  { path: "payment/:myrental", component: PaymentComponent },
 
-  { path: 'cars', component: CarComponent },
-  { path: 'car/add', component: CarAddComponent },
-  { path: 'car/update/:carId',component:CarUpdateComponent},
-  { path: 'cars/brand/:brandId', component: CarComponent },
-  { path: 'cars/color/:colorId', component: CarComponent },
-  { path: 'car/details/:carId', component: CarDetailComponent },
-  { path: 'cars/brand/:brandId/color/:colorId', component: CarComponent },
+  { path: "cars", component: CarComponent },
+  { path: "car/add", component: CarAddComponent },
+  { path: "car/update/:carId",component:CarUpdateComponent},
+  { path: "cars/brand/:brandId", component: CarComponent },
+  { path: "cars/color/:colorId", component: CarComponent },
+  { path: "car/details/:carId", component: CarDetailComponent },
+  { path: "cars/brand/:brandId/color/:colorId", component: CarComponent },
+
+  { path: "login", component: LoginComponent },
+  { path: "register", component: RegisterComponent }
 ];
 
 @NgModule({

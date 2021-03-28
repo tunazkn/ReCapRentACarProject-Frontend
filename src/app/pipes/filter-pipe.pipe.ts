@@ -10,6 +10,6 @@ export class FilterPipePipe implements PipeTransform {
     filterText = filterText ? filterText.toLocaleLowerCase():"";
 
     return filterText ? value.filter((p:Car)=>
-      p.brandName.toLocaleLowerCase().indexOf(filterText)!==-1):value
+      p.brandName.toLocaleLowerCase().indexOf(filterText)!==-1 || p.carName.toLocaleLowerCase().indexOf(filterText)!==-1):value
   }
 }

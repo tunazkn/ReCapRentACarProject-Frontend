@@ -9,7 +9,7 @@ import {Filters} from '../../models/filters';
 })
 export class FilterComponent implements OnInit {
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
