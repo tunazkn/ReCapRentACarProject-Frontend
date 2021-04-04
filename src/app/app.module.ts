@@ -37,12 +37,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { HoverDirective } from './directives/hover.directive';
 import { CarDirective } from './directives/car.directive';
-//
-//import { CartComponent } from './components/cart/cart.component';
-//import { MainComponent } from './components/main/main.component';
-//import { ProfileComponent } from './components/profile/profile.component';
-//import {RouterModule} from '@angular/router'; kullanmamış
-
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -72,8 +67,7 @@ import { CarDirective } from './directives/car.directive';
     RegisterComponent,
     HoverDirective,
     CarDirective,
-    //main
-    //profile
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
