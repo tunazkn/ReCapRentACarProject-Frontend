@@ -35,6 +35,8 @@ import { ColorListComponent } from './components/color-list/color-list.component
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { HoverDirective } from './directives/hover.directive';
+import { CarDirective } from './directives/car.directive';
 //
 //import { CartComponent } from './components/cart/cart.component';
 //import { MainComponent } from './components/main/main.component';
@@ -68,6 +70,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     ColorListComponent,
     LoginComponent,
     RegisterComponent,
+    HoverDirective,
+    CarDirective,
     //main
     //profile
   ],
