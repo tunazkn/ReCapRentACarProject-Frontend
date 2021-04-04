@@ -11,5 +11,5 @@ export interface Car{
     imageId:number;
     imagePath:string;
     carImageDate:string;
-    findeksScore:number;
+    minFindeksScore:number;
 }

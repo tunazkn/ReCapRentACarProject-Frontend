@@ -1,25 +1,28 @@
 <div class="card" style="margin-bottom: 15px; margin-top: 5px;">
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-5 bg-danger">
       <div class="card-body">
-        <ngb-carousel #carousel [interval]="3000" >
+        <ngb-carousel #carousel [interval]="3000">
           <ng-template ngbSlide *ngFor="let car of carDetails; index as i">
             <div class="carousel-caption">
               <h3>Image {{i + 1}}</h3>
             </div>
             <a routeLink="/" rel="nofollow noopener noreferrer">
               <div class="picsum-img-wrapper">
-                <img src="{{ baseUrl }}{{ car.imagePath }}" title="{{ car.brandName }} {{ car.carName }}" >
+                <img src="{{ baseUrl }}{{ car.imagePath }}" title="{{ car.brandName }} {{ car.carName }}" 
+                width="540" height="360">
               </div>
             </a>
           </ng-template>
         </ngb-carousel>
         <br>
-        <p> Not: Resimler slayt şeklinde olup otomatik olarak 3 saniye süre ile değişmektedir. Mause ile üzerine geldiğinizde durmaktadır. 
-          <br>İsterseniz manuel olarak değiştirebilirsiniz...</p>
+        <p> Not: Resimler slayt şeklinde olup otomatik olarak 3 saniye süre ile değişmektedir. Mause ile üzerine
+          geldiğinizde durmaktadır.
+          <br>İsterseniz manuel olarak değiştirebilirsiniz...
+        </p>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="card" *ngFor="let car of carDetails; let i = index">
         <div class="card-body" *ngIf="i < 1">
           <h5 class="card-title">{{ car.brandName }} {{ car.carName }}</h5>
@@ -31,14 +34,50 @@
           <hr>
           <p class="card-text" style="min-height: 100px;"><b>Description: </b> {{ car.description }}.</p>
           <hr>
-          <p class="card-text">
-            <b>Fiyat: </b> {{ car.dailyPrice |currency: "₺ " }}</p>
+          <div class="row">
+            <div class="col-md-6">
+              <p class="card-text">
+                <b>Fiyat: </b> {{ car.dailyPrice |currency: "₺ " }}
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p class="card-text"><b>Findeks Puanı: </b> {{ car.minFindeksScore }}</p>
+            </div>
+          </div>
           <hr>
           <a (click)="addCart(car)" class="btn btn-primary w-25">Rent It</a>
-          <a routerLink="/car/update/{{car.carId}}" class="btn btn-primary fa-pull-right" style="margin-right: 5px;">Arabayı
+          <a routerLink="/car/update/{{car.carId}}" class="btn btn-primary fa-pull-right"
+            style="margin-right: 5px;">Arabayı
             Düzenle</a>
         </div>
 
       </div>
     </div>
+    <div class="col-md-3">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Findeks Hesaplama</h5>
+              <Form [formGroup]="userFindeksForm">
+                <div class="mb-3">
+                  <div class="form-group">
+                    <label>Tc Kimlik Numaranız</label>
+                    <input class="form-control" type="text" formControlName="tc">
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div class="form-group">
+                    <label>Doğum Yılınız</label>
+                    <input class="form-control" type="text" formControlName="dateYear">
+                  </div>
+                </div>
+                <button class="btn btn-primary" (click)="getUserFindeks()">Findeks Hesapla</button>
+              </Form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>

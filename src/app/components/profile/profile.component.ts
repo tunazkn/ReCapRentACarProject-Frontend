@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/models/user';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -17,7 +19,9 @@ export class ProfileComponent implements OnInit {
   status:string = "Aktif Değil";
 
 
-  constructor(private userService:UserService,private formBuilder:FormBuilder,private toastrService:ToastrService) { }
+  constructor(private userService:UserService,private formBuilder:FormBuilder, private router:Router,
+    private localStorageService:LocalStorageService, private  toastrService:ToastrService
+    ) { }
 
   ngOnInit(): void {
     this.createProfileAddForm();
@@ -62,4 +66,11 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  logOut(){
+    this.localStorageService.clear()
+    this.user=null;
+    this.email=null;
+    this.router.navigate(["/"]);
+    this.toastrService.success("Çıkış Yapıldı");
+   }
 }
