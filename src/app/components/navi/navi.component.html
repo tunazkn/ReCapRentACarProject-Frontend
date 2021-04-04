@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/">Rent A Car Project</a>
+    <a class="navbar-brand" routerLink="/cars">Rent A Car Project</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -61,7 +61,7 @@
             <li>
               <hr class="dropdown-divider" />
             </li>
-            <li><a class="dropdown-item" routerLink="/rentals">Rent</a></li>
+            <li><a class="dropdown-item" routerLink="/rentals">?</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -69,24 +69,41 @@
             aria-expanded="false">Customers</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li>
-              <a class="dropdown-item" routerLink="/rentals">Customer List</a>
+              <a class="dropdown-item" routerLink="/customers">Customer List</a>
             </li>
             <li>
               <hr class="dropdown-divider" />
             </li>
-            <li><a class="dropdown-item" routerLink="/rentals">Add Customer</a></li>
+            <li><a class="dropdown-item" routerLink="/customers">?</a></li>
           </ul>
         </li>
       </ul>
     </div>
     <ul class="navbar-nav">
-      <li class="nav-item" style="width: 80px;">
+      <li class="nav-item dropdown ml-5 pl-5" *ngIf="checkLogin()">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" style="color:white" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false"> <b>{{this.user.firstName}} {{this.user.lastName}} </b></a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li>
+            <a class="dropdown-item" routerLink="/profile">Hesabım</a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="/">Şifre Değiştir.</a>
+          </li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li><a class="dropdown-item" (click)="logOut()">Çıkış Yap</a></li>
+        </ul>
+      </li>
+      <li style="color: transparent;">tt</li>
+      <li class="nav-item" style="width: 80px;"  *ngIf="!checkLogin()">
         <a class=" btn btn-success" aria-current="page" routerLink="/login"><b>Login</b></a>
       </li>
-      <li class="nav-item" style="width: 100px;">
+      <li class="nav-item" style="width: 100px;"  *ngIf="!checkLogin()">
         <a class="btn btn-info" aria-current="page" routerLink="/register"><b>Register</b></a>
       </li>
-    </ul> 
+    </ul>
   </div>
 </nav>
 <!---<nav class="navbar navbar-expand-lg navbar-light bg-light">

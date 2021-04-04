@@ -35,6 +35,12 @@ import { ColorListComponent } from './components/color-list/color-list.component
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+//
+//import { CartComponent } from './components/cart/cart.component';
+//import { MainComponent } from './components/main/main.component';
+//import { ProfileComponent } from './components/profile/profile.component';
+//import {RouterModule} from '@angular/router'; kullanmamış
+
 
 @NgModule({
   declarations: [
@@ -62,6 +68,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     ColorListComponent,
     LoginComponent,
     RegisterComponent,
+    //main
+    //profile
   ],
   imports: [
     BrowserModule,

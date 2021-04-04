@@ -1,16 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CustomerDetailDto } from '../models/customerDetailDto';
 import { ListResponseModel } from '../models/listResponseModel';
 import { Customer } from '../models/customer';
-import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
-  apiUrl = environment.apiUrl;
+  baseUrl= 'https://localhost:44334/';
+  apiUrl = 'https://localhost:44334/api/';
 
   constructor(private httpClient:HttpClient) { }
 

@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';
 import { RentalDetailDto } from '../models/rentalDetailDto';
 import { Rental } from '../models/rental';
-import { environment } from '../../environments/environment';
 import { ResponseModel } from '../models/responseModel';
 import { FakeCreditCard } from '../models/fakeCreditCard';
 
@@ -12,7 +11,8 @@ import { FakeCreditCard } from '../models/fakeCreditCard';
   providedIn: 'root'
 })
 export class RentalService {
-  apiUrl = environment.apiUrl;
+  baseUrl= 'https://localhost:44334/';
+  apiUrl= 'https://localhost:44334/api/';
   apiUrlGetAll = 'https://localhost:44334/api/rentals/getall';
   apiUrlGetdetails = 'https://localhost:44334/api/rentals/getdetails';
 

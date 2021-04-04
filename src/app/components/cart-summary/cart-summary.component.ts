@@ -5,7 +5,6 @@ import { CartService } from 'src/app/services/cart.service';
 import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
 import { RentalService } from '../../services/rental.service';
 import { Rental } from '../../models/rental';
-import { environment } from '../../../environments/environment';
 import { Car } from '../../models/car';
 import { Router } from '@angular/router';
 import { RentalDetailDto } from '../../models/rentalDetailDto';
@@ -18,7 +17,7 @@ import { faLiraSign } from '@fortawesome/free-solid-svg-icons';
 })
 export class CartSummaryComponent implements OnInit {
   cartItems: CartItem[] = [];
-  baseUrl = environment.baseUrl;
+  baseUrl = 'https://localhost:44334/';
   faLira = faLiraSign;
   model = new NgbDate(
     new Date().getFullYear(),

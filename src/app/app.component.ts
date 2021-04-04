@@ -5,11 +5,11 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [NgbCarouselConfig]  // add NgbCarouselConfig to the component providers
+  providers: [NgbCarouselConfig]
 })
 export class AppComponent {
   title: string = "RentACarProject-Frontend";
-  user: string = "Tuna Özkan"
+  owner: string = "Tuna Özkan"
 
 
 }

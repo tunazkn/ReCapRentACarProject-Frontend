@@ -5,7 +5,6 @@ import { CarService } from 'src/app/services/car.service';
 import { CartService } from 'src/app/services/cart.service';
 import { Car } from 'src/app/models/car';
 import { faLiraSign } from '@fortawesome/free-solid-svg-icons';
-import { environment } from '../../../environments/environment';
 import { RentalService } from '../../services/rental.service';
 import { Rental } from '../../models/rental';
 
@@ -16,7 +15,9 @@ import { Rental } from '../../models/rental';
 })
 export class CarComponent implements OnInit {
   cars: Car[] = [];
-  apiUrl = environment.baseUrl;
+  apiUrl = 'https://localhost:44334/';
+  baseUrl: 'https://localhost:44334/';
+  apiUrl2: 'https://localhost:44334/api/';
   dataLoaded = false;
   faLira = faLiraSign;
   filterText = '';

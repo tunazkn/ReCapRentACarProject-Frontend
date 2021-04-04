@@ -3,7 +3,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import { Car } from 'src/app/models/car';
 import { CarService } from 'src/app/services/car.service';
 import {faLiraSign} from '@fortawesome/free-solid-svg-icons';
-import {environment} from '../../../environments/environment';
 import {CartService} from '../../services/cart.service';
 import {RentalService} from '../../services/rental.service';
 import {Rental} from '../../models/rental';
@@ -17,7 +16,8 @@ import {ToastrService} from 'ngx-toastr';
 export class CarDetailComponent implements OnInit {
   carDetails:Car[];
   faLira = faLiraSign;
-  apiUrl = environment.baseUrl ;
+  baseUrl = 'https://localhost:44334/';
+  apiUrl: 'https://localhost:44334/api/';
   rentalDetail: Rental[];
 
   constructor(private carService:CarService,private activatedRoute:ActivatedRoute,

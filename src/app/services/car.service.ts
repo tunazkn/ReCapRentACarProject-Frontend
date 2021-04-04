@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ListResponseModel } from '../models/listResponseModel';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
 import { Car } from '../models/car';
 import { ResponseModel } from '../models/responseModel';
 
@@ -10,9 +9,12 @@ import { ResponseModel } from '../models/responseModel';
   providedIn: 'root',
 })
 export class CarService {
-  apiUrl = environment.apiUrl;
-  apiUrl2 = 'https://localhost:44334/api/';
+  //apiUrl = environment.apiUrl;
+  //apiUrl2 = 'https://localhost:44334/api/';
 
+  baseUrl= "https://localhost:44334/";
+  apiUrl ="https://localhost:44334/api/";
+  
   constructor(private httpClient: HttpClient) {}
 
   getCars(): Observable<ListResponseModel<Car>> {

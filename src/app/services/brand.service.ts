@@ -4,16 +4,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';
 import { Brand } from '../models/brand';
-import { environment } from 'src/environments/environment';
 import {ResponseModel} from '../models/responseModel';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BrandService {
-  
-  apiUrl = environment.apiUrl;
-  apiUrl2 = 'https://localhost:44334/api/brands/getall';
+  baseUrl= "https://localhost:44334/";
+  apiUrl = "https://localhost:44334/api/";
 
   constructor(private httpClient: HttpClient) {}
 

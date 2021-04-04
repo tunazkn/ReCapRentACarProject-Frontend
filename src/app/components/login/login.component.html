@@ -1,17 +1,32 @@
 <body class="text-center">
-    <form class="form-signin">
+  <main class="form-signin">
+    <form [formGroup]="loginForm">
+      <img class="mb-4" src="{{ logo }}" alt="" width="72" height="57">
+      <h1 class="h3 mb-3 fw-normal">Giriş Yap</h1>
+      <div class="form-floating">
+        <label for="floatingInput">E-Posta</label>
+        <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      </div>
+      <div class="form-floating">
+        <label for="floatingPassword">Parola</label>
+        <input formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Parola">
+      </div>
+      <button (click)="login()" class="w-100 btn btn-lg btn-primary">Giriş Yap</button>
+    </form>
+  </main>
+  </body>
+
+
+<!--<body class="text-center">
+<main class="form-signin">
+    <form [formGroup]="loginForm">
       <img class="mb-4" src="{{ logo }}" width="170" height="170">
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+      <label for="inputEmail" >Email</label>
+      <input formControlName="inputEmail" type="email" id="inputEmail" class="form-control" placeholder="Email address">
+      <label for="inputPassword" >Password</label>
+      <input formControlName="inputPassword" type="password" id="inputPassword" class="form-control" placeholder="Password">
+      <button (click)="login()" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
     </form>
-  </body>
+</main>
+  </body>-->

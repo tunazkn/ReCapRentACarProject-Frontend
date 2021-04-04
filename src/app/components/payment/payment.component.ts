@@ -34,8 +34,8 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
     this.createForm();
     this.activatedRoute.params.subscribe(params => {
-      if (params['myrental']) {
-        this.rental = JSON.parse(params['myrental']);
+      if (params['myRental']) {
+        this.rental = JSON.parse(params['myRental']);
       }
     });
   }

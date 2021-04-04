@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 import { LoginModel } from '../models/loginModel';
+import { RegisterModel } from '../models/registerModel';
 import { SingleResponseModel } from '../models/singleResponseModel';
 import { TokenModel } from '../models/tokenModel';
 
@@ -9,8 +10,9 @@ import { TokenModel } from '../models/tokenModel';
   providedIn: 'root'
 })
 export class AuthService {
-
-  apiUrl = environment.apiUrl;
+  baseUrl = 'https://localhost:44334/';
+  apiUrl ='https://localhost:44334/api/';
+  
   constructor(private httpClient:HttpClient) { }
 
   login(loginModel:LoginModel){
@@ -18,6 +20,10 @@ export class AuthService {
     
   }
   
+  register(registerModel:RegisterModel):Observable<SingleResponseModel<TokenModel>>{
+    return this.httpClient.post<SingleResponseModel<TokenModel>>(this.apiUrl + 'auth/register',registerModel);
+  }
+
   isAuthenticated(){
     if(localStorage.getItem("token")){
       return true;
